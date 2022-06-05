@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+    <title>Regiter / Login</title> 
+{% endblock %}
+
+{% block content %}
+    <center>
+        <button class="btn btn-primary" style='margin-top: 20px;'>
+            <a style="color: #fff; text-decoration: None;" href="{% url 'social:begin' 'github' %}">GitHub</a>
+        </button>    
+    </center>
+{% endblock %}
