@@ -6,3 +6,9 @@ def index(request):
 
 def auth(request):
     return render(request, 'auth.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')

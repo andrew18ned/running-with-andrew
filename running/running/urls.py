@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import re_path as url
-from application.views import index
+from application.views import index, about, contact
 
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path('', index, name='index'),
     url('', include('social_django.urls', namespace='social')),
     path('auth/', include('application.urls')),
+    path('about/', about),
+    path('contact/', contact),
 ]
