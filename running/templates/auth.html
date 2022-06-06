@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <p style="color: #fff; font-size:x-large;">
+    <p style="color: var(--var-body-bg); font-size:x-large;">
         Authorization with
     </p>
     <a class="btn" href="{% url 'social:begin' 'github' %}">GitHub</a>         

@@ -19,21 +19,37 @@
     <script src="https://kit.fontawesome.com/a73a0009e0.js" crossorigin="anonymous"></script>
     {% block title %}{% endblock %}
 </head>
+
+<!-- Java Script code -->
+<script>
+    const handleChange = (isChecked) => {
+        if (isChecked) {
+            document.body.setAttribute('dark', '');
+        } else {
+            document.body.removeAttribute('dark');
+
+        }
+    }
+</script>
 <body>
     <header class="header active" id="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header_logo" data-scroll="#intro"><a href="/" style="text-decoration: None; color: #fff;">MoGo</a></div>
+                <div class="header_logo" data-scroll="#intro"><a href="/" style="text-decoration: None; color: #fff;">YouCan</a></div>
                 <nav class="nav" id="nav">
                     <a class="nav_link" href="/auth" data-scroll="#about">Log in</a>
                     <a class="nav_link" href="/about" data-scroll="#about">About</a>
                     <a class="nav_link" href="/contact" data-scroll="#footer">Contact</a>
-                    <a class="nav_link" href="#">Dark/Light</a>
+                    <!-- <a href="/" style="text-decoration: None; color:#fff;"><input type="checkbox" onchange="handleChange(this.checked)">Dark/Light</a> -->
+                    <div class="form-check form-switch">
+                        <a href="/" style="text-decoration: None; color:#fff;">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="handleChange(this.checked)">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Dark/Ligth</label>
+                        </a>
+                      </div>
                     <a class="nav_link" href="#">
                         <i class="fas fa-search"></i>
                     </a>
-
-
                 </nav>
 
                 <div class="nav-toggle active" id="nav_toggle">
@@ -50,22 +66,36 @@
                 <div class="intro__inner">
                     {% block content %}
                     {% endblock %}
-                    <!-- <h2 class="intro_suptitle">Creaty Template</h2>
-                    <h1 class="intro__title">Welcome to MoGo</h1> -->
                 </div>
             </div>
         </div>
+    </div>
 
-    <style type="text/css">
-        /* CSS код */
-        body {
+    {% block footer %}
+    {% endblock footer %}
+
+<style type="text/css">
+/* CSS код */
+:root {
+    --var-body-bg: #fff;
+    --var-body-fc: #333;
+    --var-header-bg: #ac4e4e;
+}
+
+[dark] {
+    --var-body-bg: #333;
+    --var-body-fc: #fff;
+    --var-header-bg: #eb8d8d;
+}
+
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     
-    background-color: #333;
+    background-color: var(--var-body-fc);
     font-size: 15px;
     line-height: 1.6;
-    color: #333;
+    color: var(--var-body-fc);
 }
 
 *,
@@ -166,7 +196,7 @@ hr {
 .header.fixed {
     padding: 10px 0;
    
-    background-color: #ac4e4e;
+    background-color: var(--var-header-bg);
     box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
    
     position: fixed;
@@ -178,7 +208,7 @@ hr {
 }
 
 .header.active {
-    background-color: #ac4e4e;
+    background-color: var(--var-header-bg);
 }
 
 .header__inner {
@@ -322,11 +352,11 @@ hr {
     vertical-align: top;
     padding: 8px 30px;
    
-    border: 2px solid #fff;
+    border: 2px solid var(--var-body-bg);
    
     font-size: 14px;
     font-weight: 700;
-    color: #fff;
+    color: var(--var-body-bg);
     text-transform: uppercase;
     text-decoration: none;
     
@@ -1710,7 +1740,6 @@ hr {
 
 }
       </style>
-
 </body>
 </html>
 

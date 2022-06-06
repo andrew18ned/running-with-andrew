@@ -6,9 +6,74 @@
 {% endblock %}
 
 {% block content %}
-    <p style="color: #fff; font-size:x-large;">
+    <p style="color: var(--var-body-bg); font-size:x-large;">
         “Running is the greatest metaphor for life, because you get out of it what you put into it.” — Oprah Winfrey
     </p>
 
     <a class="btn" href="#">Learn More</a>
+
 {% endblock %}
+{% block footer %}
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+
+            <div class="footer__inner">
+                <div class="footer__col footer__col--first">
+                    <div class="footer__logo">Running</div>
+                    <div class="footer__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quae veritatis magni. Aperiam ut ad enim cumque eaque deleniti, saepe autem voluptatum tempora quas tempore, perferendis beatae architecto, rerum at!</div>
+
+                    <div class="footer__social">
+                        <div class="footer__social-header">
+                            <b>0.95k</b> folowers
+                        </div>
+                    </div>
+                    <form action="/" class="subcribe" method="post">
+                        <input class="subcribe__input" name="name" type="email" placeholder="Your Email">
+                        <button class="subcribe__btn" type="submit">subcribe</button>
+                    </form>
+                </div>
+                <!-- /.footer__col -->
+
+                <div class="footer__col footer__col--second">
+                    <div class="footer__title">Blogs</div>
+
+                    <div class="blogs">
+                        <div class="blogs__item">
+                            <img class="blogs__img" src="/app/img/blog/1.jpg" alt="blogs__photo">
+                            <div class="blogs__content">
+                                <a class="blogs__title" href="#">Lorem ipsum dolor sit amet consectetur.</a>
+                                <div class="blogs__date">Jan 9, 2016</div>
+                            </div>
+                        </div>
+
+                        <div class="blogs__item">
+                            <img class="blogs__img" src="/app/img/blog/2.jpg" alt="blogs__photo">
+                            <div class="blogs__content">
+                                <a class="blogs__title" href="#">Lorem ipsum dolor sit amet.</a>
+                                <div class="blogs__date">Jan 9, 2016</div>
+                            </div>
+                        </div>
+
+                        <div class="blogs__item">
+                            <img class="blogs__img" src="/app/img/blog/3.jpg" alt="blogs__photo">
+                            <div class="blogs__content">
+                                <a class="blogs__title" href="#">Fuga, ea?</a>
+                                <div class="blogs__date">Jan 9, 2016</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.blogs -->
+                </div>
+            </div>
+            <!-- /.footer__inner -->
+
+            <div class="copyrigth">
+                2016 MoGo freee PSD template by <span>Laaqiq</span>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </footer>
+{% endblock footer%}
