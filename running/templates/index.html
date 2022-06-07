@@ -28,7 +28,9 @@
                             <b>0.95k</b> folowers
                         </div>
                     </div>
-                    <form action="/" class="subcribe" method="post">
+                    
+                    <form action="/" class="subcribe" method="post" id="form">
+                        {% csrf_token %}
                         <input class="subcribe__input" name="name" type="email" placeholder="Your Email">
                         <button class="subcribe__btn" type="submit">subcribe</button>
                     </form>
@@ -40,29 +42,20 @@
 
                     <div class="blogs">
                         <div class="blogs__item">
-                            <img class="blogs__img" src="" alt="blogs__photo">
+                            <img class="blogs__img" src="{% static 'img/2.jpg' %}" alt="blogs__photo">
                             <div class="blogs__content">
-                                <a class="blogs__title" href="#">Lorem ipsum dolor sit amet consectetur.</a>
-                                <div class="blogs__date">Jan 9, 2016</div>
+                                <a class="blogs__title" href="#">Team run in the park.</a>
+                                <div class="blogs__date">Jun 19, 2022</div>
                             </div>
                         </div>
 
                         <div class="blogs__item">
-                            <img class="blogs__img" src="" alt="blogs__photo">
+                            <img class="blogs__img" src="{% static 'img/placeholder.png' %}" alt="blogs__photo">
                             <div class="blogs__content">
                                 <a class="blogs__title" href="#">Lorem ipsum dolor sit amet.</a>
-                                <div class="blogs__date">Jan 9, 2016</div>
+                                <div class="blogs__date">Jan 18, 2022</div>
                             </div>
                         </div>
-
-                        <div class="blogs__item">
-                            <img class="blogs__img" src="" alt="blogs__photo">
-                            <div class="blogs__content">
-                                <a class="blogs__title" href="#">Fuga, ea?</a>
-                                <div class="blogs__date">Jan 9, 2016</div>
-                            </div>
-                        </div>
-
                     </div>
                     <!-- /.blogs -->
                 </div>
