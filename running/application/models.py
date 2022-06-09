@@ -1,4 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField()
+
+    def __str__(self):
+        return self.user.username
+
+
 
 class Runner(models.Model):
     FOR_WHAT = (
@@ -18,7 +29,7 @@ class Runner(models.Model):
                                         verbose_name='для чого ти бігаєш?')
     running_experience = models.DecimalField(default=0, 
                                     max_digits=5, decimal_places=1,
-                                        verbose_name='біговий стаж (у роках)')
+                                        verbose_name='біговий стаж (км/рік)')
     weight = models.DecimalField(default=0, 
                                     max_digits=5, decimal_places=1,
                                             verbose_name='вага')
@@ -30,3 +41,5 @@ class Runner(models.Model):
 
     def __str__(self):
         return f'id {self.id}: {self.name}'
+
+

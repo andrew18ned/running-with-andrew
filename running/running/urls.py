@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.urls import re_path as url
 from django.conf import settings
 from django.conf.urls.static import static
-from application.views import index, about, contact
+from application.views import index, about, contact, profile
 
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
     path('auth/', include('application.urls')),
     path('about/', about),
     path('contact/', contact),
+    path('accounts/profile/', profile, name='profile'),
 ]
 
 
