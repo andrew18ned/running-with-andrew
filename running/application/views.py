@@ -21,3 +21,7 @@ def profile(request):
     # users_list = Account.objects.all()
 
     return render(request, 'profile.html')
+
+
+def logout(request):
+    return render(request, 'logout.html')
