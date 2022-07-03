@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse
+from application.models import Runner
 
 
 def index(request):
@@ -18,9 +19,10 @@ def contact(request):
 
 @login_required
 def profile(request):
-    # users_list = Account.objects.all()
+    name = request.user.username
+    runer_list = Runner.objects.filter(runer_name=name)
 
-    return render(request, 'profile.html')
+    return render(request, 'profile.html', {'runer_list':runer_list})
 
 
 def logout(request):

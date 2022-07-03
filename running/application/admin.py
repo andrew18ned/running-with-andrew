@@ -1,5 +1,4 @@
 from django.contrib import admin
-from application.models import Runner, Profile
+from application.models import Runner
 
 admin.site.register(Runner)
-admin.site.register(Profile)

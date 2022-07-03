@@ -2,13 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.user.username
-
-
 
 class Runner(models.Model):
     FOR_WHAT = (
@@ -20,14 +13,13 @@ class Runner(models.Model):
         ('M', 'чоловік'),
         ('W', 'жінка'),
     )
-    name = models.CharField(max_length=255, 
-                                    verbose_name='прізвисько бігуна')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    runer_name = models.CharField(max_length=255, verbose_name='поганялово', default=False)
     age = models.IntegerField(default=0, 
                                     verbose_name='твій вік/вікова категорія')
     why_u_run = models.CharField(max_length=255, choices=FOR_WHAT, 
                                         verbose_name='для чого ти бігаєш?')
-    running_experience = models.DecimalField(default=0, 
-                                    max_digits=5, decimal_places=1,
+    running_experience = models.CharField(default=0, max_length=255,
                                         verbose_name='біговий стаж (км/рік)')
     weight = models.DecimalField(default=0, 
                                     max_digits=5, decimal_places=1,
@@ -39,6 +31,6 @@ class Runner(models.Model):
 
 
     def __str__(self):
-        return f'id {self.id}: {self.name}'
+        return f'id {self.id}: {self.user}'
 
 
